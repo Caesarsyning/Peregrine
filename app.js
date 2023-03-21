@@ -38,7 +38,16 @@ app.get('/whitepaper',(req, res) => {
     res.render('whitepaper',input);
 });
 app.get('/news',(req, res) => {
-    const input = {title:'In the News'};
+    const input = {
+        title:'In the News',
+        other: ['UVAToday article','WVTF segment',
+            'Charlottesville NBC 29 TV segment'],
+        links:[{
+            title:'InvestigateTV video spot', 
+            url:`https://www.investigatetv.com/2022/05/16/swapped-out-hackers-target-social-media-users-with-high-tech-fake-videos/`
+        },
+            ]
+    };
     res.render('news',input);
 });
 app.use((req, res) => {
