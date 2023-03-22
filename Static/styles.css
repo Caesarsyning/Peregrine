@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+/* */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 90%; /* adjust the percentage value to your liking */
+    height: auto;
+    display: block;
+}
+/* */
+
 body{
+position: relative;
 max-width: 1200px;
 margin: 20px auto;
 padding: 0 20px;
@@ -39,6 +54,9 @@ color: #777;
 font-weight: 300;
 }
 footer{
+position:absolute;
+bottom: 30px;
+left: 40%;
 color: #777;
 text-align: center;
 margin: 80px auto 20px;
@@ -86,3 +104,17 @@ border: 0;
 font-size: 1.2em;
 cursor: pointer;
 }
+
+/* In the news links */
+.single:hover{
+    cursor: pointer;
+}
+.single .snippet:hover{
+    color: blue;
+}
+
+/* */
+
+
+
+

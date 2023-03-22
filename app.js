@@ -40,12 +40,23 @@ app.get('/whitepaper',(req, res) => {
 app.get('/news',(req, res) => {
     const input = {
         title:'In the News',
-        other: ['UVAToday article','WVTF segment',
+        articles: ['UVAToday article','WVTF segment',
             'Charlottesville NBC 29 TV segment'],
         links:[{
             title:'InvestigateTV video spot', 
             url:`https://www.investigatetv.com/2022/05/16/swapped-out-hackers-target-social-media-users-with-high-tech-fake-videos/`
+        },{
+            title: 'UVAToday article',
+            url:'https://news.virginia.edu/content/uva-undergrads-offer-new-approach-detecting-deepfake-videos'
         },
+        {
+            title: 'Charlottesville NBC 29 TV segment',
+            url:'https://www.nbc29.com/2021/06/16/uva-students-working-deepfake-detection-technology/'
+        },
+        {
+            title: 'WVTF segment',
+            url:'https://www.wvtf.org/news/2021-06-18/fact-or-fiction-two-uva-students-tackle-deepfakes'
+        }
             ]
     };
     res.render('news',input);
