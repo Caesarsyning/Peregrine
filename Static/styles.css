@@ -1,120 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-/* */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-img {
-    max-width: 90%; /* adjust the percentage value to your liking */
-    height: auto;
-    display: block;
-}
-/* */
-
+/* Add any custom styles here */
+/* Header styles */
 body{
-position: relative;
-max-width: 1200px;
-margin: 20px auto;
-padding: 0 20px;
-font-family: 'Noto Serif', serif;
-max-width: 1200px;
+    padding-top: 140px;
 }
-p, h1, h2, h3, a, ul{
-margin: 0;
-padding: 0;
-text-decoration: none;
-color: #222;
+header {
+  background-color: #fff;
+  color: #000;
+  padding: 20px 0;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
-
-/* nav & footer styles */
-nav{
-display: flex;
-justify-content: space-between;
-margin-bottom: 60px;
-padding-bottom: 10px;
-border-bottom: 1px solid #ddd;
-text-transform: uppercase;
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 9999;
 }
-nav ul{
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-}
-nav li{
-list-style-type: none;
-margin-left: 20px;
-}
-nav h1{
-font-size: 3em;
-}
-nav p, nav a{
-color: #777;
-font-weight: 300;
-}
-footer{
-position:absolute;
-bottom: 30px;
-left: 40%;
-color: #777;
-text-align: center;
-margin: 80px auto 20px;
-}
-h2{
-margin-bottom: 40px;
-}
-h3{
-text-transform: capitalize;
-margin-bottom: 8px;
-}
-.content{
-margin-left: 20px;
+header .navbar-brand {
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-/* index styles */
-
-/* details styles */
-
-/* create styles */
-.create-blog form{
-max-width: 400px;
-margin: 0 auto;
-}
-.create-blog input,
-.create-blog textarea{
-display: block;
-width: 100%;
-margin: 10px 0;
-padding: 8px;
-}
-.create-blog label{
-display: block;
-margin-top: 24px;
-}
-textarea{
-height: 120px;
-}
-.create-blog button{
-margin-top: 20px;
-background: crimson;
-color: white;
-padding: 6px;
-border: 0;
-font-size: 1.2em;
-cursor: pointer;
+header .navbar-toggler {
+  border-color: #f0ca45;
 }
 
-/* In the news links */
-.single:hover{
-    cursor: pointer;
+header .nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 20px;
 }
-.single .snippet:hover{
-    color: blue;
+
+header .nav-link:hover {
+  color: #f0ca45;
 }
 
-/* */
+.logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: auto;
+  }
+  
 
+header .search-logo {
+  margin-right: 10px;
+}
 
+/* Body styles */
+main {
+  padding: 100px 0;
+}
 
+main .summary-section {
+  background-color: #f9f9f9;
+  padding: 50px;
+}
 
+main .media-links-section {
+  background-color: #eee;
+  padding: 30px 50px;
+}
+
+main .contact-info-section {
+  background-color: #f9f9f9;
+  padding: 30px 50px;
+}
+
+main h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+main ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+main a {
+  color: #000;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: #f0ca45;
+  text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  background-color: #f0ca45;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*
+paper section
+*/
+section{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.section-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.paper-title{
+  font-family: 'Times New Roman', Times, serif;
+}
+.author{
+  font-family: 'Times New Roman', Times, serif;
+}
+.section-title{
+  font-family: serif;
+}
