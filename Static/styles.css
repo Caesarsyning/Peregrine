@@ -1,9 +1,11 @@
 
 /* Add any custom styles here */
 /* Header styles */
+
 body{
     padding-top: 140px;
 }
+
 header {
   background-color: #fff;
   color: #000;
@@ -158,3 +160,9 @@ section{
 .section-title{
   font-family: serif;
 }
+
+.buffer{
+  height: 200px;
+}
+
+
