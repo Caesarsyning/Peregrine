@@ -4,7 +4,7 @@
 <body>
   <%- include("./partials/nav.ejs") %>
 
-  <div class="blogs content">
+  <section class="p-3">
     <h2>In the News</h2>
 
       <% links.forEach(link => { %>
@@ -12,6 +12,8 @@
           <p class="snippet"><u><%= link.title %></u></p>
         </a>
       <% }) %>
+  </section>
+    
    
   </div>
 
