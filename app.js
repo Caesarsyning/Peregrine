@@ -1,5 +1,6 @@
 const express = require('express');
 const app  = express();
+const paper = require('./constructPaper')
 
 // connect to MongoDB
 /*
@@ -37,8 +38,18 @@ app.get('/research',(req, res) => {
     res.render('research',input);
 });
 app.get('/whitepaper',(req, res) => {
-    const input = {title:'Whitepaper'};
-    res.render('whitepaper',input);
+    const input = {
+        title:'Whitepaper', 
+        paper_title: paper.title,
+        author: paper.author,
+        sections: paper.sections
+    };
+    res.render('whitepaper',{
+        title:'Whitepaper', 
+        paper_title: paper.title,
+        author: paper.author,
+        sections: paper.sections
+    });
 });
 app.get('/news',(req, res) => {
     const input = {
@@ -68,4 +79,3 @@ app.use((req, res) => {
     const input = {title:'404'};
     res.status(404).render('404',input);
 })
-
