@@ -1,22 +1,24 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 
-<body>
+<body class="news">
   <%- include("./partials/nav.ejs") %>
-
-  <section class="p-3">
-    <h2>In the News</h2>
+  <!-- Body -->
+  <section class="summary">
+    <div class="container">
+      <h2>In the News</h2>
 
       <% links.forEach(link => { %>
         <a class="single" href="<%= link.url %>">
           <p class="snippet"><u><%= link.title %></u></p>
         </a>
       <% }) %>
+    </div>
   </section>
-    
-   
-  </div>
+  <footer style="position: absolute;">
+    Copyright &copy; Peregrine 2023
+  </footer>
+   <!-- Local JS -->
+   <script src="/web.js"></script> 
 
-  <%- include("./partials/footer.ejs") %>
-</body>
 </html>
