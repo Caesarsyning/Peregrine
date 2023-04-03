@@ -11,7 +11,10 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     })
 
 */
-app.listen(3000);
+const port = process.env.port || 3000
+app.listen(port);
+
+
 // set ejs as the view engine to express 
 app.set('view engine','ejs');
 
