@@ -1,7 +1,9 @@
 
 /* Add any custom styles here */
 /* Header styles */
-
+a{
+  color: #000;
+}
 
 body {
   /* Set the background image */
@@ -42,9 +44,9 @@ body p {
 
 .offcanvas {
   position: fixed;
-  top: 70px;
+  top: 120px;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
   z-index: 1040;
   visibility: hidden;
   overflow-y: auto;
@@ -61,6 +63,11 @@ body p {
 .offcanvas.show {
   visibility: visible;
   transform: translateX(0);
+}
+#open-menu-btn{
+  position: fixed;
+  top: 60px;
+  right: 0;
 }
 
 header {
@@ -126,8 +133,12 @@ header .navbar-toggler {
     height: auto;
   }
   
-
-
+.about .card{
+  border: none; 
+}
+.about .card-body{
+  padding: 5px;
+}
 
 /* Body styles */
 main {

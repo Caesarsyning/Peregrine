@@ -1,75 +1,100 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 
-<body>
-  <%- include("./partials/nav.ejs") %>
-  <!-- Off-canvas menu -->
-<nav id="offcanvasMenu" class="offcanvas offcanvas-start" aria-labelledby="offcanvasMenuLabel">
-  <div class="offcanvas-header">
-    <h5 id="offcanvasMenuLabel">Table of Contents</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <% if (sections.length > 0) { %>
-      <ul class="list-unstyled">
-        <% sections.forEach(section => { %>
-          <li><a href="#<%= section.section_title %>" ><%= section.section_title %></a></li>
-          <% section.content.forEach(subsection => { %>
-            <% if (subsection.title != null) { %>
-              <li class="ms-3"><a href="#<%= subsection.title %>"><%= subsection.title %></a></li>
-            <% } %>
-          <% }) %>
-        <% }) %>
-      </ul>
-    <% } %>
-  </div>
-</nav>
+  <body>
+    <%- include("./partials/nav.ejs") %>
 
-<!-- Button to open off-canvas menu -->
-<button id="open-menu-btn" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-  Table of Contents
-</button>
 
-    <div class="container p-5">
-      <h1 class="paper-title text-center"><%= paper_title %></h1>
-      <p class="author text-center"><%=author %></p>
-      <% if (sections.length > 0) { %>
-        <% sections.forEach(section => { %>
+      <!-- Button to open off-canvas menu -->
+      <button id="open-menu-btn" class="btn btn-secondary" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <i class="fa-solid fa-bars"></i> &nbsp Table of Contents
+      </button>
+
+      <div class="container p-5">
+        <h1 class="paper-title text-center">
+          <%= paper_title %>
+        </h1>
+        <p class="author text-center">
+          <%=author %>
+        </p>
+        <% if (sections.length> 0) { %>
+          <% sections.forEach(section=> { %>
             <section class="px-5 pt-3 " id="<%= section.section_title%>">
-              <h2 class="section-title" ><%= section.section_title%></h2>
-              <% section.content.forEach(subsection => { %>
-                <% if (subsection.title == null) { %>
+              <h2 class="section-title">
+                <%= section.section_title%>
+              </h2>
+              <% section.content.forEach(subsection=> { %>
+                <% if (subsection.title==null) { %>
                   <section>
-                   <p><%= subsection.content%></p>
+                    <p>
+                      <%= subsection.content%>
+                    </p>
                   </section>
                   <% } else { %>
-                    <section class="pt-5"id="<%= subsection.title%>">
-                      <h4><%= subsection.title%></h4>
-                      <% subsection.subpoints.forEach(subpoint => { %>
-                        <p> <%= subpoint.text%></p>
-                        <% if (subpoint.img!= null) { %>
+                    <section class="pt-5" id="<%= subsection.title%>">
+                      <h4>
+                        <%= subsection.title%>
+                      </h4>
+                      <% subsection.subpoints.forEach(subpoint=> { %>
+                        <p>
+                          <%= subpoint.text%>
+                        </p>
+                        <% if (subpoint.img!=null) { %>
                           <div class="container my-5">
                             <img class="paper-img mx-auto d-block" src="<%= subpoint.img.src%>">
-                          </div>  
-                          <p><%= subpoint.img.text%></p>
-                        <% } %>
-                        <% }) %>
+                          </div>
+                          <p>
+                            <%= subpoint.img.text%>
+                          </p>
+                          <% } %>
+                            <% }) %>
                     </section>
                     <% } %>
-              <% }) %>
+                      <% }) %>
             </section>
-        <% }) %>
-      <% } %>
-      
-    </div>
-      
-    
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.ctloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <% }) %>
+              <% } %>
 
-  
-  <%- include("./partials/footer.ejs") %>
-</body>
+      </div>
+      <!-- Off-canvas menu -->
+      <nav id="offcanvasMenu" class="offcanvas offcanvas-start rounded-left" style="background-color: #F5F5F5;" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasMenuLabel" >Table of Contents</h5>
+        </div>
+        <div class="offcanvas-body">
+          <% if (sections.length> 0) { %>
+            <ul class="list-unstyled">
+              <% sections.forEach(section=> { %>
+                <li><a href="#<%= section.section_title %>">
+                    <%= section.section_title %>
+                  </a></li>
+                <% section.content.forEach(subsection=> { %>
+                  <% if (subsection.title !=null) { %>
+                    <li class="ms-3 pl-5"><a href="#<%= subsection.title %>">
+                        - <%= subsection.title %>
+                      </a></li>
+                    <% } %>
+                      <% }) %>
+                        <% }) %>
+            </ul>
+            <% } %>
+        </div>
+      </nav>
+
+      <!-- Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.ctloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+      <%- include("./partials/footer.ejs") %>
+  </body>
+
 </html>

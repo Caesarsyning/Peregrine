@@ -50,3 +50,18 @@ const openMenuBtn = document.querySelector('#open-menu-btn');
 openMenuBtn.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
+
+
+
+// Hide the menu when the user clicks outside of it
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = menu.contains(event.target);
+  const isClickInsideBtn = openMenuBtn.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickInsideBtn) {
+    menu.classList.remove('show');
+  }
+});
+
+
+
