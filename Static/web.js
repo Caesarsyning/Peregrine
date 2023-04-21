@@ -65,3 +65,15 @@ document.addEventListener('click', (event) => {
 
 
 
+
+
+//dim out other part when offcanvas open
+
+var offcanvasMenu = document.getElementById('offcanvasMenu');
+offcanvasMenu.addEventListener('shown.bs.offcanvas', function () {
+  document.body.classList.add('offcanvas-open');
+});
+
+offcanvasMenu.addEventListener('hidden.bs.offcanvas', function () {
+  document.body.classList.remove('offcanvas-open');
+});

@@ -1,22 +1,29 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 
-<body class="news">
-  <%- include("./partials/nav.ejs") %>
-  <!-- Body -->
-  <section class="summary">
-    <div class="container">
-      <h2>In the News</h2>
+  <body class="news">
+    <%- include("./partials/nav.ejs") %>
+      <!-- Body -->
+      <section class="summary" style="height:1000px;">
+        <div class="container">
 
-      <% links.forEach(link => { %>
-        <a class="single" href="<%= link.url %>">
-          <p class="snippet"><u><%= link.title %></u></p>
-        </a>
-      <% }) %>
-    </div>
-  </section>
-  <%- include("./partials/footer.ejs") %>
-   <!-- Local JS -->
-   <script src="/web.js"></script> 
+          <h2>In the News</h2>
+          <% links.forEach(link=> { %>
+            <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle text-left" style="width: 100%;" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <%= link.title %>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%">
+                <li><iframe src="<%= link.url %>" style="border: none; width: 100%; height: 700px;"></iframe></li>
+              </ul>
+            </div>
+            <% }) %>
+        </div>
+      </section>
+
+      <%- include("./partials/footer.ejs") %>
+        <!-- Local JS -->
+
 
 </html>

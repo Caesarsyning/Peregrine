@@ -66,8 +66,8 @@ body p {
 }
 #open-menu-btn{
   position: fixed;
-  top: 60px;
-  right: 0;
+  top: 65px;
+  right: 25px;
 }
 
 header {
@@ -280,4 +280,27 @@ section{
   height: auto;
 }
 
+
+
+
+
+
+
+.offcanvas-open {
+  overflow: hidden;
+}
+
+.offcanvas-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 1040; /* greater than offcanvas */
+}
+
+.offcanvas {
+  z-index: 1041; /* greater than offcanvas-overlay */
+}
 
