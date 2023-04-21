@@ -39,3 +39,14 @@ function showHeader() {
     isScrolling = false;
   }
 }
+
+
+
+// show offcanvas
+
+const menu = document.querySelector('.offcanvas');
+const openMenuBtn = document.querySelector('#open-menu-btn');
+
+openMenuBtn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
